@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+body {
+  height: calc(100vh - 85px);
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+}
+
+/* header */
+header {
+  width: 100%;
+  position: fixed;
+  margin-top: -85px;
+}
+
+.log-back {
+  width: 100%;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+}
+
+.log-bar {
+  width: 100%;
+  max-width: 1280px;
+  background-color: #222;
+  display: flex;
+  justify-content: right;
+  padding: 0 20px;
+}
+
+.btn-box {
+  right: 0;
+  height: 25px;
+  line-height: 23px;
+}
+
+.btn-box>a {
+  color: #fff;
+  font-size: 14px;
+  padding: 5px;
+}
+.btn-box>a:hover {
+	color: skyblue;
+}	
+.btn-box>a:active {
+	color: royalblue;
+}
+
+.gnb-back {
+  width: 100%;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+}
+
+.gnb {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #444;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.logo {
+  margin: 5px 0;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+.menu-box {}
+
+.menu-box>a {
+  margin: 0 10px;
+  padding: 10px 10px;
+  color: #fff;
+}
+.menu-box>a:hover {
+	color: skyblue;
+}	
+.menu-box>a:active {
+	color: royalblue;
+}
+
+/* main */
+body {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  max-width: 1280px;
+  justify-self: center;
+  margin-top:85px;
+  height: calc(100vh - 235px);
+  overflow-y: auto;
+}
+
+
+/* footer */
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 0 20px;
+}
+
+
+.com-info {
+  text-align: center;
+}
+
+
+.com-info h4 {
+  font-size: 26px;
+}
+
+.com-info h5 {}
+
+.com-title {
+  margin-bottom: 15px;
+}
+
+.com-loc {
+  margin-bottom: 8px;
+}
+
+.com-tel {
+  margin: 5px 0;
+}
+
+.com-email {}

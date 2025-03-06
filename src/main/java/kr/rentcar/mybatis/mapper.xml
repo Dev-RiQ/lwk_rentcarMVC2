@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.rentcar.mybatis.mapper">
+	<select id="isLoginPass" parameterType="User" resultType="int">
+		SELECT num
+		FROM user
+		WHERE userid="${userid}" AND pwd="${pwd}"
+	</select>
+	<insert id="insertUser" parameterType="User">
+		INSERT INTO user(name,userid,pwd,email,phone)
+		VALUES("${name}","${userid}","${pwd}","${email}","${phone}")
+	</insert>
+	<select id="getAUser" parameterType="int" resultType="User">
+		SELECT *
+		FROM user
+		WHERE num=${log}
+	</select>
+	<update id="updateUser" parameterType="User">
+		UPDATE user 
+		SET email="${email}", phone="${phone}"
+		WHERE num=${num}
+	</update>
+	<delete id="deleteUser" parameterType="int">
+		DELETE FROM user 
+		WHERE num=${log}
+	</delete>
+	<select id="getReservationList" parameterType="int" resultType="RentInfo">
+		SELECT r.reserve_seq,rc.name,r.qty,r.rday,r.dday,r.usein,r.usewifi,r.usenavi,r.useseat
+		FROM reservation r
+		INNER JOIN user u
+		ON r.userid = u.userid
+		INNER JOIN rentcar rc
+		ON rc.num = r.num
+		WHERE u.num=${log}
+	</select>
+	<delete id="deleteAReservation" parameterType="int">
+		DELETE FROM reservation 
+		WHERE reserve_seq=${seq}
+	</delete>
+	<select id="getARentInfoDetail" parameterType="int" resultType="RentInfoDetail">
+		SELECT r.reserve_seq,rc.name,r.qty,r.rday,r.dday,r.usein,r.usewifi,r.usenavi,r.useseat,rc.category,rc.price,rc.usepeople,rc.total_qty,rc.company,rc.img,rc.info
+		FROM reservation r
+		INNER JOIN rentcar rc
+		ON rc.num = r.num
+		WHERE r.reserve_seq=${seq}
+	</select>
+	<select id="getAllRentcarList" resultType="Rentcar">
+		SELECT *
+		FROM rentcar
+		WHERE total_qty!=0
+	</select>
+	<select id="getAllReservation" parameterType="int" resultType="Reservation">
+		SELECT r.*
+		FROM reservation r
+		INNER JOIN user u
+		ON r.userid = u.userid
+		WHERE u.num=${log}
+	</select>
+	<select id="getRentcarList" parameterType="int" resultType="Rentcar">
+		SELECT *
+		FROM rentcar
+		WHERE category=${category} AND total_qty!=0
+	</select>
+	<select id="getARentcarInfo" parameterType="int" resultType="RentInfoDetail">
+		SELECT *
+		FROM rentcar
+		WHERE num=${num}
+	</select>
+	<select id="getUserId" parameterType="int" resultType="String">
+		SELECT userid
+		FROM user
+		WHERE num=${log}
+	</select>
+	<select id="getSeq" resultType="int">
+		SELECT reserve_seq
+		FROM reservation
+		ORDER BY reserve_seq DESC 
+		LIMIT 1
+	</select>
+	<select id="getQty" parameterType="int" resultType="int">
+		SELECT qty
+		FROM reservation
+		WHERE reserve_seq=${seq}
+	</select>
+	<select id="getSeqByLog" parameterType="int" resultType="int">
+		SELECT r.reserve_seq
+		FROM reservation r
+		INNER JOIN user u
+		ON u.userid=r.userid
+		WHERE u.num=${log}
+	</select>
+	<insert id="addAReservation" parameterType="Reservation">
+		INSERT INTO reservation(num,userid,qty,dday,rday,usein,usewifi,usenavi,useseat)
+		VALUES("${num}","${userid}","${qty}","${dday}","${rday}","${usein}","${usewifi}","${usenavi}","${useseat}")
+	</insert>
+	<update id="updateReservation" parameterType="Reservation">
+		UPDATE reservation 
+		SET qty=${qty},dday=${dday},usein=${usein},usewifi=${usewifi},usenavi=${usenavi},useseat=${useseat}
+		WHERE reserve_seq=${reserve_seq}
+	</update>
+	<update id="updateTotalQty" parameterType="Rentcar">
+		UPDATE rentcar 
+		SET total_qty=${total_qty}
+		WHERE num=${num}
+	</update>
+	<select id="getRentcarNum" parameterType="int" resultType="int">
+		SELECT r.num
+		FROM rentcar r
+		INNER JOIN reservation rs
+		ON r.num=rs.num
+		WHERE rs.reserve_seq=${seq}
+	</select>
+	<select id="getRentcarTotalQty" parameterType="int" resultType="int">
+		SELECT r.total_qty
+		FROM rentcar r
+		INNER JOIN reservation rs
+		ON r.num=rs.num
+		WHERE rs.reserve_seq=${seq}
+	</select>
+	<select id="getRentcarQty" parameterType="int" resultType="int">
+		SELECT rs.qty
+		FROM rentcar r
+		INNER JOIN reservation rs
+		ON r.num=rs.num
+		WHERE rs.reserve_seq=${seq}
+	</select>
+	<select id="getAllUser" resultType="User">
+		SELECT *
+		FROM user
+		WHERE num!=1
+	</select>
+	<select id="getAllRentcar" resultType="Rentcar">
+		SELECT *
+		FROM rentcar
+	</select>
+</mapper>
