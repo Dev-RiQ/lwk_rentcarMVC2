@@ -165,9 +165,6 @@ main {
 .reservation-box,.res-info-box,.login-box,.insert-box,.update-box,.car-list-box,.car-info-box,.user-list-box,.car-update-box,.rentcar-list-box,.car-insert-box{
 	padding-bottom:50px;
 }
-.back-background{
-	background-color: #222;
-}
 .background{
 	background: url("../img/index.jpg") no-repeat center center;
 	width:100vw;

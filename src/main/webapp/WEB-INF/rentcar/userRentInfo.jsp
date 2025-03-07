@@ -85,7 +85,9 @@
 			</tr>
 			<tr>
 				<th>수량</th>
-				<td><input name="updateQty" id="updateQty" type="number" value="${ detail.qty }" min="1" max="999"/>
+				<td><input name="updateQty" id="updateQty" type="number" value="${ detail.qty }" min="1" max="${ detail.qty + detail.total_qty}"/></td>
+			</tr>
+			<tr><td></td><td>
 				<span id="totalQtySpan"></span></td>
 			</tr>
 			<tr>

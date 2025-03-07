@@ -15,7 +15,10 @@ public class UserRentInfoDeleteController implements Controller{
 			throws ServletException, IOException {
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		ReservationDAO.getInstance().deleteAReservation(seq);
-		ScriptAlert.getInstance().goUrlWithMsg(response, request, "예약이 취소되었습니다.", "userRentList.do");
+		if(request.getSession().getAttribute("log").toString().equals("1"))
+			ScriptAlert.getInstance().goUrlWithMsg(response, request, "예약이 취소되었습니다.", "reservationManage.do");
+		else
+			ScriptAlert.getInstance().goUrlWithMsg(response, request, "예약이 취소되었습니다.", "userRentList.do");
 		return null;
 	}
 

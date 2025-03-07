@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+.category-2.off{
+	display: none;
+}
+/* userRentList */
+.delete-all{
+	width:95vw;
+	max-width:1000px;
+	display: flex;
+	justify-content: space-around;
+}
+.delete-all div{
+	width:200px;
+}
+.reservation-table td,th{
+	padding: 10px;
+	max-width:140px;
+}
+.reservation-table .day-range{
+	width:130px;
+}
+.reservation-table button{
+	background-color: royalblue;
+	color:#fff;
+	width:100px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:15px;
+}
+.reservation-table button:hover{
+	background-color: #6888e8;
+}
+.reservation-table button:active{
+	background-color: #9aafef;
+}
+.btn-delete-all{
+	background-color: royalblue;
+	color:#fff;
+	width:200px;
+	padding:20px;
+	border-radius: 10px;
+	margin:20px 0;
+	font-size:25px;
+}
+.btn-delete-all:hover{
+	background-color: #6888e8;
+}
+.btn-delete-all:active{
+	background-color: #9aafef;
+}
+.reservation-table .hr-td{
+	padding:0;
+}
+
+/* rentcarList */
+.category .btn-category{
+	padding:20px;
+	font-size:24px;
+	width:160px;
+	margin: 0 10px;
+	margin-bottom: 30px;
+	background-color: #eee;
+}
+.category .btn-category.on{
+	background-color: #ccc;
+	box-shadow: 0 0 5px 0 coral;
+}
+.car-list-box{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+.car-box{
+	max-width:800px;
+	border-radius: 30px;
+	box-shadow:  0 0 5px 0 coral;
+	padding: 10px;
+	overflow:hidden;
+}
+.car-img img{
+	width: 300px;
+	height: 300px;
+	object-fit: contain;
+}
+.car-info-hr{
+	border: 1px dashed #ffb395;
+}
+.btn-reservation{
+	background-color: coral;
+	color:#fff;
+	margin-top:20px;
+	width:300px;
+	padding:20px;
+	border-radius: 20px;
+	font-size:30px;
+}
+.btn-reservation:hover{
+	background-color: #ffb395;
+}
+.btn-reservation:active{
+	background-color: #ffc9b5;
+}
+
+
+/* rentcarInfo */
+.rent-select{
+	width:820px;
+	display:flex; 
+	justify-content: center;
+	align-items: center;
+	flex-wrap:wrap;
+	border-radius: 30px;
+	box-shadow: 0 0 5px 0 coral;
+}
+.rent-select>table{
+	width:400px;
+}
+
+.rent-select>table img{
+	width:400px;
+	height:300px;
+	object-fit:contain;
+}
+.table-blank{
+	height: 100px;
+}
+.rent-select input{
+	width:80%;
+}
+.rent-select #in,#wifi,#navi,#seat{
+	width:10%;
+}
+.rent-select button{
+	background-color: coral;
+	color:#fff;
+	margin:20px 0;
+	width:350px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:26px;
+}
+.rent-select button:hover{
+	background-color: #ffb395;
+}
+.rent-select button:active{
+	background-color: #ffc9b5;
+}
+
+
+
+/* userRentInfo */
+
+.res-info{
+	width:820px;
+	display:flex; 
+	justify-content: center;
+	align-items: center;
+	flex-wrap:wrap;
+	border-radius: 30px;
+	box-shadow: 0 0 5px 0 coral;
+}
+.res-info>table{
+	width:400px;
+}
+
+.res-info>table img{
+	width:400px;
+	height:300px;
+	object-fit:contain;
+}
+.user-table-blank{
+	height: 80px;
+}
+.res-info input{
+	width:80%;
+}
+.res-info #in,#wifi,#navi,#seat{
+	width:10%;
+}
+.res-info button{
+	background-color: coral;
+	color:#fff;
+	margin:20px 0;
+	width:190px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:24px;
+}
+.res-info button:hover{
+	background-color: #ffb395;
+}
+.res-info button:active{
+	background-color: #ffc9b5;
+}

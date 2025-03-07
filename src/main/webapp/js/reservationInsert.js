@@ -28,7 +28,14 @@ qty.addEventListener("input", () => {
 		calcTotalPrice();
 	}
 })
-
+qty.addEventListener("keydown", (e) => {
+	e.preventDefault();
+	return false;
+})
+document.querySelector('#rentEday').addEventListener("keydown", (e) => {
+	e.preventDefault();
+	return false;
+})
 const rentRday = document.querySelector("#rentRday") 
 const rentEday = document.querySelector("#rentEday") 
 rentEday.addEventListener("input", () => {

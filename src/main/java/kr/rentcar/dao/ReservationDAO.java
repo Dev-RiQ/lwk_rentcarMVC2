@@ -25,6 +25,18 @@ public class ReservationDAO {
 			calcEndDay(list);
 		} catch (Exception e) {
 			System.out.println("getReservationList error");
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public List<RentInfo> getAllReservationList() {
+		List<RentInfo> list = null;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			list = session.selectList("getAllReservationList");
+			calcEndDay(list);
+		} catch (Exception e) {
+			System.out.println("getAllReservationList error");
+			e.printStackTrace();
 		}
 		return list;
 	}

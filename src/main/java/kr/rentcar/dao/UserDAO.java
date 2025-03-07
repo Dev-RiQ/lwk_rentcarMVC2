@@ -106,4 +106,14 @@ public class UserDAO {
 		}
 		return false;
 	}
+
+	public int getNumById(String userid) {
+		int num = 0;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			num = session.selectOne("getNumById", userid);
+		}catch (Exception e) {
+			System.out.println("getNumById Fail");
+		}
+		return num;
+	}
 }

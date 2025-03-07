@@ -97,4 +97,13 @@ public class RentcarDAO {
 		}
 		return filename;
 	}
+	public String getCarNameByNum(int num) {
+		String carName = null;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			carName = session.selectOne("getCarNameByNum", num);
+		}catch (Exception e) {
+			System.out.println("getCarNameByNum Fail");
+		}
+		return carName;
+	}
 }

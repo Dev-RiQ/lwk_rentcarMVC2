@@ -27,13 +27,19 @@
 		WHERE num=${log}
 	</delete>
 	<select id="getReservationList" parameterType="int" resultType="RentInfo">
-		SELECT r.reserve_seq,rc.name,r.qty,r.rday,r.dday,r.usein,r.usewifi,r.usenavi,r.useseat
+		SELECT r.reserve_seq,r.userid,rc.name,r.qty,r.rday,r.dday,r.usein,r.usewifi,r.usenavi,r.useseat
 		FROM reservation r
 		INNER JOIN user u
 		ON r.userid = u.userid
 		INNER JOIN rentcar rc
 		ON rc.num = r.num
 		WHERE u.num=${log}
+	</select>
+	<select id="getAllReservationList" resultType="RentInfo">
+		SELECT r.reserve_seq,r.userid,rc.name,r.qty,r.rday,r.dday,r.usein,r.usewifi,r.usenavi,r.useseat
+		FROM reservation r
+		INNER JOIN rentcar rc
+		ON rc.num = r.num
 	</select>
 	<delete id="deleteAReservation" parameterType="int">
 		DELETE FROM reservation 
@@ -172,5 +178,69 @@
 		SELECT userid
 		FROM user
 		WHERE userid="${id}"
+	</select>
+	<select id="getCntAllBoardByCategory" parameterType="int" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		WHERE category=${category}
+	</select>
+	<select id="getCntAllBoard" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+	</select>
+	<select id="getAllBoardIncategory" parameterType="int" resultType="Board">
+		SELECT *
+		FROM board
+		WHERE category=${category}
+		ORDER BY board_num DESC
+	</select>
+	<select id="getLastBoardNum" resultType="int">
+		SELECT board_num
+		FROM board
+		ORDER BY board_num DESC
+		LIMIT 1
+	</select>
+	<select id="getABoard" parameterType="int" resultType="Board">
+		SELECT *
+		FROM board
+		WHERE board_num=${board_num}
+	</select>
+	<select id="getCarNameByNum" parameterType="int" resultType="String">
+		SELECT name
+		FROM rentcar
+		WHERE num=${num}
+	</select>
+	<select id="getNumById" parameterType="String" resultType="int">
+		SELECT num
+		FROM user
+		WHERE userid="${userid}"
+	</select>
+	<insert id="insertBoard" parameterType="Board">
+		INSERT INTO board(category,userid,num,title,score,content,img,datetime)
+		VALUES(${category},"${userid}",${num},"${title}",${score},"${content}","${img}","${datetime}")
+	</insert>
+	<update id="updateBoardImgNull" parameterType="Board">
+		UPDATE board
+		SET title="${title}",score=${score},content="${content}"
+		WHERE board_num=${board_num}
+	</update>
+	<update id="updateBoard" parameterType="Board">
+		UPDATE board
+		SET title="${title}",score=${score},content="${content}",img="${img}"
+		WHERE board_num=${board_num}
+	</update>
+	<select id="getBoardFileName" parameterType="int" resultType="String">
+		SELECT img
+		FROM board
+		WHERE board_num=${board_num}
+	</select>
+	<delete id="deleteABoard" parameterType="int">
+		DELETE FROM board
+		WHERE board_num=${board_num}
+	</delete>
+	<select id="getAllBoard" resultType="Board">
+		SELECT *
+		FROM board
+		ORDER BY board_num DESC
 	</select>
 </mapper>

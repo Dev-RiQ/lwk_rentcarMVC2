@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="${ ctx }/css/rentcar.css">
 <link rel="stylesheet" href="${ ctx }/css/user.css">
 <link rel="stylesheet" href="${ ctx }/css/reservation.css">
+<link rel="stylesheet" href="${ ctx }/css/board.css">
 </head>
 <body>
 	<header>
@@ -36,19 +37,21 @@
 	        <a href="${ ctx }/index.jsp"><img class="logo-img" src="${ ctx }/img/logo.png" alt="logo.png"></a>
 	      </div>
 	      <div class="menu-box">
-	        <a href="예약">공지사항</a>
+	        <a href="${ ctx }/boardPaging.do?category=1&curpage=1">공지사항</a>
 	        <c:choose>
 	      		<c:when test="${ log != 1}">
 			        <a href="${ ctx }/rentcarList.do">예약하기</a>
 			        <a href="${ ctx }/userRentList.do">예약내역</a>
+			        <a href="${ ctx }/boardPaging.do?category=2&curpage=1">이용후기</a>
+			        <a href="${ ctx }/boardPaging.do?category=3&curpage=1">문의하기</a>
 	      		</c:when>
 	      		<c:otherwise>
 			        <a href="${ ctx }/rentcarManage.do">차량관리</a>
 			        <a href="${ ctx }/userManage.do">고객관리</a>
+			        <a href="${ ctx }/reservationManage.do">예약관리</a>
+			        <a href="${ ctx }/boardManage.do?curpage=1">게시글관리</a>
 	      		</c:otherwise>
 	      	</c:choose>
-	        <a href="예약">이용후기</a>
-	        <a href="예약">문의하기</a>
 	      </div>
 	    </div>
 	  </div>

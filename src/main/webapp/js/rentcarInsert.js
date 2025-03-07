@@ -20,3 +20,11 @@ function reservationInsertValidCheck(){
 	}
 	form.submit()
 }
+document.querySelector('#carTotalQty').addEventListener("keydown", (e) => {
+	e.preventDefault();
+	return false;
+})
+document.querySelector('#carUsepeople').addEventListener("keydown", (e) => {
+	e.preventDefault();
+	return false;
+})

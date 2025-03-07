@@ -93,7 +93,12 @@
 					<tr>
 						<th>수량</th>
 						<td>
-							<input name="rentQty" id="rentQty" type="number" value="1" min="1" max="999"/>
+							<input name="rentQty" id="rentQty" type="number" value="1" min="1" max="${ detail.total_qty}" />
+						</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td>
 							<span id="totalQtySpan"></span>
 						</td>
 					</tr>

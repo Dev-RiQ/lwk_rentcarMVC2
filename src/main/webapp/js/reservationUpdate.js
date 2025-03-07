@@ -18,15 +18,23 @@ function reservationInsertValidCheck(){
 }
 
 const qty = document.querySelector("#updateQty") 
+let totalQty = parseInt(document.querySelector("#totalQty").innerText) + parseInt(qty.value)
 qty.addEventListener("input", () => {
-	if(qty.value > parseInt(document.querySelector("#totalQty").innerText)){
-		qty.style.border = "2px solid crimson"
-		document.querySelector("#totalQtySpan").textContent = '재고를 초과하였습니다.'
+	if(qty.value == totalQty){
+		alert('더 이상은 재고가 부족합니다.')
 	}else{
 		qty.style.border = "2px solid royalblue"
 		document.querySelector("#totalQtySpan").textContent = ''
 		calcTotalPrice();
 	}
+})
+qty.addEventListener("keydown", (e) => {
+	e.preventDefault();
+	return false;
+})
+document.querySelector('#rentEday').addEventListener("keydown", (e) => {
+	e.preventDefault();
+	return false;
 })
 
 const rentRday = document.querySelector("#rentRday") 

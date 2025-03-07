@@ -10,6 +10,7 @@
   	<typeAlias type="kr.rentcar.dto.User" alias="User"/>
   	<typeAlias type="kr.rentcar.dto.RentInfo" alias="RentInfo"/>
   	<typeAlias type="kr.rentcar.dto.RentInfoDetail" alias="RentInfoDetail"/>
+  	<typeAlias type="kr.rentcar.dto.Board" alias="Board"/>
   </typeAliases>
   <environments default="development">
     <environment id="development">

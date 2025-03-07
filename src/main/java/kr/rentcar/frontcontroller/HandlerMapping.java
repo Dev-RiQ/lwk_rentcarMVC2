@@ -2,6 +2,12 @@ package kr.rentcar.frontcontroller;
 
 import java.util.HashMap;
 
+import kr.rentcar.controller.BoardContentController;
+import kr.rentcar.controller.BoardDeleteController;
+import kr.rentcar.controller.BoardInsertController;
+import kr.rentcar.controller.BoardManageController;
+import kr.rentcar.controller.BoardPagingController;
+import kr.rentcar.controller.BoardUpdateController;
 import kr.rentcar.controller.Controller;
 import kr.rentcar.controller.RentcarDeleteController;
 import kr.rentcar.controller.RentcarInfoController;
@@ -9,6 +15,7 @@ import kr.rentcar.controller.RentcarInsertController;
 import kr.rentcar.controller.RentcarListController;
 import kr.rentcar.controller.RentcarManageController;
 import kr.rentcar.controller.RentcarUpdateController;
+import kr.rentcar.controller.ReservationManageController;
 import kr.rentcar.controller.UserContentController;
 import kr.rentcar.controller.UserDeleteController;
 import kr.rentcar.controller.UserInsertController;
@@ -50,6 +57,14 @@ public class HandlerMapping {
 		mappings.put("/rentcarManage.do",new RentcarManageController());
 		
 		mappings.put("/validateAjax.do",new ValidateAjaxController());
+		
+		mappings.put("/boardDelete.do",new BoardDeleteController());
+		mappings.put("/boardUpdate.do",new BoardUpdateController());
+		mappings.put("/boardInsert.do",new BoardInsertController());
+		mappings.put("/boardPaging.do",new BoardPagingController());
+		mappings.put("/boardContent.do",new BoardContentController());
+		mappings.put("/boardManage.do",new BoardManageController());
+		mappings.put("/reservationManage.do",new ReservationManageController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

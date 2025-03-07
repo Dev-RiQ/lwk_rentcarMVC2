@@ -2,6 +2,7 @@ package kr.rentcar.dto;
 
 public class RentInfo {
 	private int reserve_seq;
+	private String userid;
 	private String name;
 	private int qty;
 	private String rday;
@@ -11,10 +12,11 @@ public class RentInfo {
 	private int usewifi;
 	private int usenavi;
 	private int useseat;
-	public RentInfo(int reserve_seq, String name, int qty, String rday, int dday, int usein, int usewifi, int usenavi,
-			int useseat) {
+	public RentInfo(int reserve_seq, String userid, String name, int qty, String rday, int dday, int usein,
+			int usewifi, int usenavi, int useseat) {
 		super();
 		this.reserve_seq = reserve_seq;
+		this.userid = userid;
 		this.name = name;
 		this.qty = qty;
 		this.rday = rday;
@@ -23,6 +25,12 @@ public class RentInfo {
 		this.usewifi = usewifi;
 		this.usenavi = usenavi;
 		this.useseat = useseat;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	public int getReserve_seq() {
 		return reserve_seq;
