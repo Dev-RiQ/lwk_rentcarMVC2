@@ -51,12 +51,17 @@
 		FROM rentcar
 		WHERE total_qty!=0
 	</select>
-	<select id="getAllReservation" parameterType="int" resultType="Reservation">
+	<select id="getAllReservationByLog" parameterType="int" resultType="Reservation">
 		SELECT r.*
 		FROM reservation r
 		INNER JOIN user u
 		ON r.userid = u.userid
 		WHERE u.num=${log}
+	</select>
+	<select id="getAllReservationByNum" parameterType="int" resultType="Reservation">
+		SELECT *
+		FROM reservation
+		WHERE num=${num}
 	</select>
 	<select id="getRentcarList" parameterType="int" resultType="Rentcar">
 		SELECT *
@@ -134,5 +139,38 @@
 	<select id="getAllRentcar" resultType="Rentcar">
 		SELECT *
 		FROM rentcar
+	</select>
+	<insert id="insertRentcar" parameterType="Reservation">
+		INSERT INTO rentcar(name, category, price, usepeople, total_qty, company, img, info)
+		VALUES("${name}",${category},${price},${usepeople},${total_qty},"${company}","${img}","${info}")
+	</insert>
+	<select id="getFilename" parameterType="int" resultType="String">
+		SELECT img
+		FROM rentcar
+		WHERE num=${num}
+	</select>
+	<delete id="deleteCar" parameterType="int">
+		DELETE FROM rentcar
+		WHERE num=${num}
+	</delete>
+	<select id="getRentcarByNum" parameterType="int" resultType="Rentcar">
+		SELECT *
+		FROM rentcar
+		WHERE num=${num}
+	</select>
+	<update id="updateRentcarNoImg" parameterType="Rentcar">
+		UPDATE rentcar
+		SET name="${name}",category=${category},price=${price},usepeople=${usepeople},total_qty=${total_qty},company="${company}",info="${info}"
+		WHERE num=${num}
+	</update>
+	<update id="updateRentcarHasImg" parameterType="Rentcar">
+		UPDATE rentcar
+		SET name="${name}",category=${category},price=${price},usepeople=${usepeople},total_qty=${total_qty},company="${company}",img="${img}",info="${info}"
+		WHERE num=${num}
+	</update>
+	<select id="getId" parameterType="String" resultType="String">
+		SELECT userid
+		FROM user
+		WHERE userid="${id}"
 	</select>
 </mapper>

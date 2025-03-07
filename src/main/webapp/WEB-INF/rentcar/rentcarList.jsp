@@ -17,6 +17,7 @@
 			<div class="car-img">
 				<img src="${ctx}/img/${ car.img }" alt="car.jpg" />
 			</div>
+			<hr class="car-info-hr">
 			<div class="car-info">
 				<table class="info-table">
 					<tr>
@@ -26,10 +27,6 @@
 					<tr>
 						<th>차량명</th>
 						<td>${ car.name }</td>
-					</tr>
-					<tr>
-						<th>정보</th>
-						<td>${ car.info }</td>
 					</tr>
 					<tr>
 						<th>차종</th>
@@ -46,6 +43,10 @@
 					<tr>
 						<th>잔여 차량 개수</th>
 						<td>${ car.total_qty }</td>
+					</tr>
+					<tr>
+						<th>정보</th>
+						<td>${ car.info }</td>
 					</tr>
 				</table>
 			</div>

@@ -16,6 +16,10 @@ a {
   color: #222;
 }
 
+input:focus {
+	outline:none;
+}
+
 h1,
 h2,
 h3,
@@ -122,13 +126,106 @@ body {
   width: 100%;
 }
 
+h1 {
+	padding: 40px;
+}
+input{
+	padding: 5px;
+	font-size: 18px;
+}
+label{
+	padding: 5px;
+	font-size: 18px;
+}
+textarea{
+	height: 100px;
+	padding: 5px;
+	font-size: 18px;
+}
+section{
+  width: 100vw;
+  margin-top:85px;
+  height: calc(100vh - 235px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 main {
   width: 100%;
   max-width: 1280px;
   justify-self: center;
-  margin-top:85px;
   height: calc(100vh - 235px);
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.reservation-box,.res-info-box,.login-box,.insert-box,.update-box,.car-list-box,.car-info-box,.user-list-box,.car-update-box,.rentcar-list-box,.car-insert-box{
+	padding-bottom:50px;
+}
+.back-background{
+	background-color: #222;
+}
+.background{
+	background: url("../img/index.jpg") no-repeat center center;
+	width:100vw;
+	max-width:1280px;
+	height:100vh;
+	overflow-x:hidden;
+	object-fit:cover;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	z-index:10;
+}
+.background::before{
+	content: '';
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:calc(100vh - 235px);
+	background-color: #222;
+	opacity: 0.4;
+	z-index:10;
+}
+.home{
+	color:#fff;
+	z-index:100;
+}
+.home h1{
+	font-size:120px;
+	padding:0;
+	margin-top:5vh;
+}
+.home h4{
+	margin-top:-20px;
+	font-size: 20px;
+	letter-spacing: 28px;
+	color:yellow;
+	margin-bottom:30vh;
+}
+.home h2{
+	font-size:30px;
+	margin-bottom: 20px;
+}
+.home button{
+	width:300px;
+	height:80px;
+	border-radius:10px;
+	font-size:30px;
+	background-color:coral;
+	margin-bottom: 10vh;
+}
+.home button:hover{
+	background-color: #ffb395;
+}
+.home button:active{
+	background-color: #ffc9b5;
 }
 
 

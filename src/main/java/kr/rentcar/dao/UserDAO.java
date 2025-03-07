@@ -96,4 +96,14 @@ public class UserDAO {
 		}
 		return list;
 	}
+
+	public boolean hasId(String id) {
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			if(session.selectOne("getId", id) != null)
+				return true;
+		}catch (Exception e) {
+			System.out.println("getId Fail");
+		}
+		return false;
+	}
 }

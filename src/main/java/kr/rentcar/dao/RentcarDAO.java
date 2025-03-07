@@ -45,4 +45,56 @@ public class RentcarDAO {
 		}
 		return list;
 	}
+	public void insertRentcar(String name, int category, int price, int usepeople, int total_qty, String company, String img,
+			String info) {
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			session.insert("insertRentcar", new Rentcar(0, name, category, price, usepeople, total_qty, company, img, info));
+			session.commit();
+		}catch (Exception e) {
+			System.out.println("insertRentcar Fail");
+		}
+	}
+	public void updateRentcar(int num, String name, int category, int price, int usepeople, int total_qty, String company, String img,
+			String info) {
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			if(img == null)
+				session.update("updateRentcarNoImg", new Rentcar(num, name, category, price, usepeople, total_qty, company, img, info));
+			else {
+				session.update("updateRentcarHasImg", new Rentcar(num, name, category, price, usepeople, total_qty, company, img, info));
+			}
+			session.commit();
+		}catch (Exception e) {
+			System.out.println("updateRentcar Fail");
+			e.printStackTrace();
+		}
+	}
+	public String getFilenameAndDeleteCar(int num) {
+		String filename = null;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			filename = session.selectOne("getFilename", num);
+			session.delete("deleteCar", num);
+			session.commit();
+		}catch (Exception e) {
+			System.out.println("getFilenameAndDeleteCar Fail");
+		}
+		return filename;
+	}
+	public Rentcar getRentcarByNum(int num) {
+		Rentcar rentcar = null;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			rentcar = session.selectOne("getRentcarByNum", num);
+		}catch (Exception e) {
+			System.out.println("getRentcarByNum Fail");
+		}
+		return rentcar;
+	}
+	public String getFilename(int num) {
+		String filename = null;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			filename = session.selectOne("getFilename", num);
+		}catch (Exception e) {
+			System.out.println("getFilename Fail");
+		}
+		return filename;
+	}
 }

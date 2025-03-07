@@ -9,7 +9,7 @@
 			<div class="insert-input">
 				<label for="insertId">아이디</label>
 				<input name="insertId" id="insertId" type="text"/>
-				<button class="btn-insert">중복체크</button>
+				<button class="btn-insert" onclick="userIdCheck()">중복체크</button>
 			</div>
 			<div class="insert-input">
 				<label for="insertPw">비밀번호</label>
@@ -23,14 +23,17 @@
 				<label for="insertEmail">이메일</label>
 				<input name="insertEmail" id="insertEmail" type="text"/>
 			</div>
+				<span id="insertEmailSpan"></span>
 			<div class="insert-input">
 				<label for="insertPhone">전화번호</label>
 				<input name="insertPhone" id="insertPhone" type="text"/>
 			</div>
+				<span id="insertPhoneSpan"></span>
 			<div class="insert-submit">
-				<button class="btn-insert">회원가입</button>
+				<button class="btn-insert" onclick="userInsertValidCheck()">회원가입</button>
 			</div>
 		</div>
 	</form>
 </div>
 <%@ include file="../../part/footer.jsp" %>
+<script src="${ctx}/js/userInsert.js"></script>

@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/* adminUserList */
+.user-info-table td,th{
+	padding: 5px 10px;
+}
+.user-info-table button{
+	background-color: royalblue;
+	color:#fff;
+	width:100px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:15px;
+}
+.user-info-table button:hover{
+	background-color: #6888e8;
+}
+.user-info-table button:active{
+	background-color: #9aafef;
+}
+.user-info-table .hr-td{
+	padding:0;
+}
+
+/* userUpdate */
+.update-box{
+	max-width:400px;
+}
+.update-sec{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+.update-input{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:10px;
+}
+.update-input input{
+	width: 250px;
+}
+.update-submit button{
+	background-color: royalblue;
+	color:#fff;
+	margin-top:10px;
+	width:180px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:20px;
+}
+.update-submit button:hover{
+	background-color: #6888e8;
+}
+.update-submit button:active{
+	background-color: #9aafef;
+}
+
+/* userLogin */
+.login-box{
+	max-width:400px;
+}
+.login-sec{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+.login-input{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:10px;
+}
+.login-input input{
+	width: 250px;
+}
+.login-submit button{
+	background-color: royalblue;
+	color:#fff;
+	margin-top:10px;
+	width:180px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:20px;
+}
+.login-submit button:hover{
+	background-color: #6888e8;
+}
+.login-submit button:active{
+	background-color: #9aafef;
+}
+
+/* userInsert */
+.insert-box{
+	max-width:400px;
+}
+.insert-sec{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+.insert-input{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:13px;
+}
+.insert-input input{
+	width: 250px;
+}
+.insert-submit button{
+	background-color: royalblue;
+	color:#fff;
+	margin-top:10px;
+	width:180px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:20px;
+}
+.insert-submit button:hover{
+	background-color: #6888e8;
+}
+.insert-submit button:active{
+	background-color: #9aafef;
+}
+.insert-input #insertId{
+	width: 150px;
+	margin-left:10px;
+}
+.btn-insert{
+	background-color: royalblue;
+	color:#fff;
+	width:90px;
+	padding:5px;
+	border-radius: 10px;
+	font-size:16px;
+}
+.btn-insert:hover{
+	background-color: #6888e8;
+}
+.btn-insert:active{
+	background-color: #9aafef;
+}
+.insert-sec span{
+	font-size:12px;
+	color: crimson;
+	margin-top: -13px;
+	margin-bottom: 13px;
+}
+.insert-sec span.on{
+	margin-bottom: 0;
+}

@@ -22,6 +22,7 @@ import kr.rentcar.controller.UserRentInfoUpdateController;
 import kr.rentcar.controller.UserRentListController;
 import kr.rentcar.controller.UserRentListDeleteController;
 import kr.rentcar.controller.UserUpdateController;
+import kr.rentcar.controller.ValidateAjaxController;
 
 public class HandlerMapping {
 	private HashMap<String, Controller> mappings;
@@ -47,6 +48,8 @@ public class HandlerMapping {
 		mappings.put("/rentcarDelete.do",new RentcarDeleteController());
 		mappings.put("/rentcarUpdate.do",new RentcarUpdateController());
 		mappings.put("/rentcarManage.do",new RentcarManageController());
+		
+		mappings.put("/validateAjax.do",new ValidateAjaxController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

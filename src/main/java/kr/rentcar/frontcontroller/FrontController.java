@@ -12,9 +12,9 @@ import kr.rentcar.controller.Controller;
 
 @WebServlet("*.do")
 @MultipartConfig(
-		maxFileSize = 1024 * 1024 * 1,  //1MB
-		maxRequestSize = 1024 * 1024 * 10  //10MB
-	)
+	maxFileSize = 1024 * 1024 * 1,  //1MB
+	maxRequestSize = 1024 * 1024 * 10  //10MB
+)
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/* adminRentcarContent */
+.car-insert-box{
+	max-width:400px;
+}
+.car-insert-input img{
+	width: 600px;
+	
+}
+.car-insert-sec{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+.car-insert-input{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:10px;
+}
+.car-insert-input .insert-category{
+	width:140px;
+	text-align: left;
+}
+.car-insert-input #carCategory{
+	width:30px;
+}
+.car-insert-input input{
+	width: 250px;
+}
+.car-insert-input textarea{
+	width: 250px;
+}
+.btn-car-insert{
+	background-color: royalblue;
+	color:#fff;
+	margin-top:20px;
+	width:400px;
+	padding:20px;
+	border-radius: 10px;
+	font-size:30px;
+}
+.btn-car-insert:hover{
+	background-color: #6888e8;
+}
+.btn-car-insert:active{
+	background-color: #9aafef;
+}
+
+/* adminRentcarList */
+.add-car{
+	width:95vw;
+	max-width:1200px;
+	display: flex;
+	justify-content: space-around;
+}
+.add-car div{
+	width:200px;
+}
+.rentcar-info-table img{
+	width:100px;
+	height:60px;
+	object-fit: contain;
+}
+
+.rentcar-info-table td,th{
+	padding: 10px;
+	max-width:140px;
+}
+.rentcar-info-table button{
+	background-color: royalblue;
+	color:#fff;
+	width:100px;
+	padding:10px;
+	border-radius: 10px;
+	font-size:15px;
+}
+.rentcar-info-table button:hover{
+	background-color: #6888e8;
+}
+.rentcar-info-table button:active{
+	background-color: #9aafef;
+}
+.btn-add-car{
+	background-color: royalblue;
+	color:#fff;
+	width:200px;
+	padding:20px;
+	border-radius: 10px;
+	margin:20px 0;
+	font-size:25px;
+}
+.btn-add-car:hover{
+	background-color: #6888e8;
+}
+.btn-add-car:active{
+	background-color: #9aafef;
+}
+.dot-hr{
+	border: 1px dashed #bbb;
+}
+.rentcar-info-table .hr-td{
+	padding:0;
+}
+
+/* adminRentcarUpdate */
+.car-update-box{
+	max-width:400px;
+}
+.car-update-input img{
+	width: 600px;
+	
+}
+.car-update-sec{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+.car-update-input{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:10px;
+}
+.car-update-input .update-category{
+	width:140px;
+	text-align: left;
+}
+.car-update-input #carCategory{
+	width:30px;
+}
+.car-update-input input{
+	width: 250px;
+}
+.car-update-input textarea{
+	width: 250px;
+}
+.btn-car-update{
+	background-color: royalblue;
+	color:#fff;
+	margin-top:20px;
+	width:400px;
+	padding:20px;
+	border-radius: 10px;
+	font-size:30px;
+}
+.btn-car-update:hover{
+	background-color: #6888e8;
+}
+.btn-car-update:active{
+	background-color: #9aafef;
+}

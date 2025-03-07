@@ -17,6 +17,7 @@
 					<th>정보수정</th>
 					<th>회원삭제</th>
 				</tr>
+				<tr><td class="hr-td" colspan="11"><hr></td></tr>
 				<c:forEach var="user" items="${userList}">
 					<tr>
 						<td>${ user.num }</td>
@@ -28,6 +29,7 @@
 						<td><button onclick="location.href='${ctx}/userContent.do?num=${user.num}'">상세보기</button></td>
 						<td><button onclick="location.href='${ctx}/userDelete.do?num=${user.num}'">삭제하기</button></td>
 					</tr>
+					<tr><td class="hr-td" colspan="11"><hr class="dot-hr"></td></tr>
 				</c:forEach>
 			</table>
 		</div>

@@ -38,7 +38,7 @@ public class ReservationDAO {
 	}
 	public void deleteAllReservation(int log) {
 		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
-			List<Reservation> list = session.selectList("getAllReservation",log); 
+			List<Reservation> list = session.selectList("getAllReservationByLog",log);
 			for(Reservation r : list) {
 				int seq = r.getReserve_seq();
 				int qty = r.getQty();
@@ -47,7 +47,19 @@ public class ReservationDAO {
 			}
 			session.commit();
 		} catch (Exception e) {
-			System.out.println("deleteAllReservation error");
+			System.out.println("getAllReservationByLog error");
+		}
+	}
+	public void deleteAllReservationByNum(int num) {
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			List<Reservation> list = session.selectList("getAllReservationByNum",num);
+			for(Reservation r : list) {
+				int seq = r.getReserve_seq();
+				session.delete("deleteAReservation", seq);
+			}
+			session.commit();
+		} catch (Exception e) {
+			System.out.println("deleteAllReservationByNum error");
 		}
 	}
 	public void deleteAReservation(int seq) {

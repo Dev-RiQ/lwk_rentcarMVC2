@@ -8,6 +8,9 @@
 <meta charset="UTF-8">
 <title>lwk_rentcar</title>
 <link rel="stylesheet" href="${ ctx }/css/style.css">
+<link rel="stylesheet" href="${ ctx }/css/rentcar.css">
+<link rel="stylesheet" href="${ ctx }/css/user.css">
+<link rel="stylesheet" href="${ ctx }/css/reservation.css">
 </head>
 <body>
 	<header>
@@ -50,4 +53,5 @@
 	    </div>
 	  </div>
 	</header>
+	<section>
 	<main>
