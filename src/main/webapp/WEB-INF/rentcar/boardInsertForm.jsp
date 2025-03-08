@@ -6,34 +6,36 @@
 <div class="board-insert-box">
 	<form class="board-insert-form" action="${ ctx }/boardInsert.do?check=1" method="post" enctype="multipart/form-data">
 		<div class="board-insert-sec">
-			<div class="board-insert-input">
-				<label for="insertCategory">카테고리</label>
-				<select name="insertCategory" id="insertCategory">
-					<c:if test="${ log == 1 }">
-						<option value="1">공지사항</option>
-					</c:if>
-					<c:if test="${ log != 1 }">
-						<option value="2">이용후기</option>
-						<option value="3">문의사항</option>
-					</c:if>
-				</select>
-			</div>
-			<div class="category-2">
+			<div class="select-box">
 				<div class="board-insert-input">
-					<label for="insertNum">이용차량</label>
-					<select name="insertNum" id="insertNum">
-						<c:forEach var="car" items="${ carList }">
-							<option value="${ car.num }">${ car.name }</option>
-						</c:forEach>
+					<label for="insertCategory">카테고리</label>
+					<select name="insertCategory" id="insertCategory">
+						<c:if test="${ log == 1 }">
+							<option value="1">공지사항</option>
+						</c:if>
+						<c:if test="${ log != 1 }">
+							<option value="2">이용후기</option>
+							<option value="3">문의사항</option>
+						</c:if>
 					</select>
 				</div>
-				<div class="board-insert-input">
-					<label for="insertScore">평점</label>
-					<select name="insertScore" id="insertScore">
-						<c:forEach var="i" begin="1" end="5">
-							<option value="${ 6 - i }">${ 6 - i }점</option>
-						</c:forEach>
-					</select>
+				<div class="category-2 ${ log == 1 ? 'off' : '' }">
+					<div class="board-insert-input">
+						<label for="insertNum">이용차량</label>
+						<select name="insertNum" id="insertNum">
+							<c:forEach var="car" items="${ carList }">
+								<option value="${ car.num }">${ car.name }</option>
+							</c:forEach>
+						</select>
+					</div>
+					<div class="board-insert-input">
+						<label for="insertScore">평점</label>
+						<select name="insertScore" id="insertScore">
+							<c:forEach var="i" begin="1" end="5">
+								<option value="${ 6 - i }">${ 6 - i }점</option>
+							</c:forEach>
+						</select>
+					</div>
 				</div>
 			</div>
 			<div class="board-insert-input">
@@ -41,7 +43,7 @@
 				<input name="insertTitle" id="insertTitle" type="text"/>
 			</div>
 			<div class="board-insert-input">
-				<label for="insertContent">내용</label>
+				<label class="content-label" for="insertContent">내용</label>
 				<textarea name="insertContent" id="insertContent"></textarea>
 			</div>
 			<div class="board-insert-input">

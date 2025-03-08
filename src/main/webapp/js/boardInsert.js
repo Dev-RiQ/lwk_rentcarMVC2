@@ -16,9 +16,27 @@ function boardInsertValidCheck(){
 const category = document.querySelector("#insertCategory") 
 category.addEventListener("input", () => {
 	const inputSection = document.querySelector(".category-2");
-	if(category.value == 3){
-		inputSection.classList.add("off")
-	}else{
+	if(category.value == 2){
 		inputSection.classList.remove("off")
+	}else{
+		inputSection.classList.add("off")
+	}
+})
+
+const title = document.querySelector("#insertTitle")
+let maxTitleLength = 50;
+title.addEventListener("input", () => {
+	if(title.value.length > maxTitleLength){
+		title.value = title.value.substr(0,maxTitleLength)
+		alert(`최대 ${maxTitleLength}자까지 입력 가능합니다.`)
+	}
+})
+
+const content = document.querySelector("#insertContent")
+let maxContentLength = 500;
+content.addEventListener("input", () => {
+	if(content.value.length > maxContentLength){
+		content.value = content.value.substr(0,maxContentLength)
+		alert(`최대 ${maxContentLength}자까지 입력 가능합니다.`)
 	}
 })

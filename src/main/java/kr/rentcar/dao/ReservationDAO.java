@@ -102,12 +102,13 @@ public class ReservationDAO {
 	public void addAReservation(int num, String userid, int qty, int dday, String rday, int usein, int usewifi,
 			int usenavi, int useseat) {
 		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
-			int seq = session.selectOne("getSeq");
 			session.insert("addAReservation", new Reservation(0, num, userid, qty, dday, rday, usein, usewifi, usenavi, useseat));
-			setTotalQty(session, seq+1, -qty);
+			int seq = session.selectOne("getSeq");
+			setTotalQty(session, seq, -qty);
 			session.commit();
 		} catch (Exception e) {
 			System.out.println("getCalcEday error");
+			e.printStackTrace();
 		}
 	}
 	public int getSeq() {

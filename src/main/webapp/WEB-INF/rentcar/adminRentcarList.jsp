@@ -12,7 +12,7 @@
 		<div class="rentcar-info">
 			<table class="rentcar-info-table">
 				<tr class="th-row">
-					<th>차량번호</th>
+					<th>번호</th>
 					<th>이름</th>
 					<th>카테고리</th>
 					<th>가격</th>
@@ -29,7 +29,7 @@
 					<tr>
 						<td>${ car.num }</td>
 						<td>${ car.name }</td>
-						<td>${ car.category }</td>
+						<td>${ car.category == 1 ? "소형" : car.category == 2 ? "중형" : "대형" }</td>
 						<td>${ car.price }</td>
 						<td>${ car.usepeople }</td>
 						<td>${ car.total_qty }</td>

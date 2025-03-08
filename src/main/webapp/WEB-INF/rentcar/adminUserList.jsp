@@ -8,10 +8,9 @@
 		<div class="user-info">
 			<table class="user-info-table">
 				<tr class="th-row">
-					<th>회원번호</th>
+					<th>번호</th>
 					<th>이름</th>
 					<th>아이디</th>
-					<th>비밀번호</th>
 					<th>이메일</th>
 					<th>전화번호</th>
 					<th>정보수정</th>
@@ -23,7 +22,6 @@
 						<td>${ user.num }</td>
 						<td>${ user.name }</td>
 						<td>${ user.userid }</td>
-						<td>${ user.pwd }</td>
 						<td>${ user.email }</td>
 						<td>${ user.phone }</td>
 						<td><button onclick="location.href='${ctx}/userContent.do?num=${user.num}'">상세보기</button></td>

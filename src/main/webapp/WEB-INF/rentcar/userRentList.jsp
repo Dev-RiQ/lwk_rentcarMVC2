@@ -12,9 +12,9 @@
 	</c:if>
 	<table class="reservation-table">
 		<tr class="th-row">
-			<th>예약번호</th>
+			<th>번호</th>
 			<th>예약차량</th>
-			<th>예약수량</th>
+			<th>수량</th>
 			<th class="day-range">예약기간</th>
 			<th>운전자보험</th>
 			<th>인터넷</th>
@@ -31,7 +31,7 @@
 						<td>${ rentinfo.reserve_seq }</td>
 						<td>${ rentinfo.name }</td>
 						<td>${ rentinfo.qty }</td>
-						<td>${ rentinfo.rday } ~
+						<td class="rentday">${ rentinfo.rday } ~
 							${ rentinfo.eday }<br>
 							(${ rentinfo.dday }일)</td>
 						<td>${ rentinfo.usein eq 0 ? "X" : "O"}</td>

@@ -82,7 +82,7 @@ public class BoardDAO {
 
 	public void insertBoard(int category, String userid, int num, int score, String title, String content, String img) {
 		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
-			String datetime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss"));
+			String datetime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 			if(category != 2) {
 				num = 0;
 				score = 0;

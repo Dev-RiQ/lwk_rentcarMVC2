@@ -1,23 +1,35 @@
 @charset "UTF-8";
+
 /* userRentList */
+.reservation-table{
+	border-radius: 20px;
+	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
+}
+.reservation-box{
+	max-width:1200px;
+}
 .delete-all{
-	width:95vw;
-	max-width:1000px;
+	width:80vw;
+	max-width:970px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 .delete-all div{
-	width:200px;
+	width:100px;
 }
 .reservation-table td,th{
 	padding: 10px;
+	max-width:200px;
+}
+.reservation-table td.rentday{
 	max-width:140px;
 }
 .reservation-table .day-range{
 	width:130px;
 }
 .reservation-table button{
-	background-color: royalblue;
+	background-color: coral;
 	color:#fff;
 	width:100px;
 	padding:10px;
@@ -25,25 +37,29 @@
 	font-size:15px;
 }
 .reservation-table button:hover{
-	background-color: #6888e8;
+	background-color: #ffb395;
 }
 .reservation-table button:active{
-	background-color: #9aafef;
+	background-color: #ffc9b5;
 }
 .btn-delete-all{
-	background-color: royalblue;
+	background-color: coral;
 	color:#fff;
-	width:200px;
-	padding:20px;
+	width:100px;
+	height:40px;
+	line-height:20px;
+	padding:10px;
+	position:relative;
+	top:40px;
 	border-radius: 10px;
 	margin:20px 0;
-	font-size:25px;
+	font-size:20px;
 }
 .btn-delete-all:hover{
-	background-color: #6888e8;
+	background-color: #ffb395;
 }
 .btn-delete-all:active{
-	background-color: #9aafef;
+	background-color: #ffc9b5;
 }
 .reservation-table .hr-td{
 	padding:0;
@@ -51,16 +67,28 @@
 
 /* rentcarList */
 .category .btn-category{
-	padding:20px;
+	padding:10px;
 	font-size:24px;
-	width:160px;
+	width:100px;
 	margin: 0 10px;
 	margin-bottom: 30px;
-	background-color: #eee;
+	background-color: coral;
+	border-radius: 10px;
+}
+.category .btn-category:hover{
+	background-color: #ffb395;
+}
+.category .btn-category:active{
+	background-color: #ffc9b5;
 }
 .category .btn-category.on{
-	background-color: #ccc;
-	box-shadow: 0 0 5px 0 coral;
+	background-color: #e63f00;
+}
+.category .btn-category.on:hover{
+	background-color: #ff6124;
+}
+.category .btn-category.on:active{
+	background-color: #ff9e79;
 }
 .car-list-box{
 	display: flex;

@@ -1,196 +1,340 @@
 @charset "UTF-8";
 
-.category-2.off{
+.select-box>.category-2.off{
 	display: none;
 }
-/* userRentList */
-.delete-all{
-	width:95vw;
-	max-width:1000px;
-	display: flex;
-	justify-content: space-around;
+
+/* boardList */
+.board-AllList-box{
+	padding:50px 0;
 }
-.delete-all div{
-	width:200px;
-}
-.reservation-table td,th{
+.AllList-table td,th{
 	padding: 10px;
-	max-width:140px;
+	max-width: 200px;
 }
-.reservation-table .day-range{
+.AllList-table .day-range{
 	width:130px;
 }
-.reservation-table button{
-	background-color: royalblue;
+.board-AllList>.AllList-table .board-title-width{
+	min-width:500px;
+	max-width:500px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+.board-AllList>.AllList-table th.board-title-width{
+	text-align: center;
+}
+.board-page-btn button.on{
+	background-color: #e63f00;
+}
+.board-page-btn button.on:hover{
+	background-color: #ff6124;
+}
+.board-page-btn button.on:active{
+	background-color: #ff9e79;
+}
+.board-page-btn button{
+	background-color: coral;
 	color:#fff;
-	width:100px;
+	width:36px;
+	height: 36px;
 	padding:10px;
 	border-radius: 10px;
-	font-size:15px;
-}
-.reservation-table button:hover{
-	background-color: #6888e8;
-}
-.reservation-table button:active{
-	background-color: #9aafef;
-}
-.btn-delete-all{
-	background-color: royalblue;
-	color:#fff;
-	width:200px;
-	padding:20px;
-	border-radius: 10px;
 	margin:20px 0;
-	font-size:25px;
+	font-size:16px;
 }
-.btn-delete-all:hover{
-	background-color: #6888e8;
+.board-page-btn button:hover{
+	background-color: #ffb395;
 }
-.btn-delete-all:active{
-	background-color: #9aafef;
+.board-page-btn button:active{
+	background-color: #ffc9b5;
 }
-.reservation-table .hr-td{
+.AllList-table .hr-td{
 	padding:0;
 }
 
-/* rentcarList */
-.category .btn-category{
-	padding:20px;
-	font-size:24px;
-	width:160px;
-	margin: 0 10px;
-	margin-bottom: 30px;
-	background-color: #eee;
-}
-.category .btn-category.on{
-	background-color: #ccc;
-	box-shadow: 0 0 5px 0 coral;
-}
-.car-list-box{
+
+/* boardContent */
+.content-box{
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 20px;
+	justify-content: space-between;
 }
-.car-box{
-	max-width:800px;
-	border-radius: 30px;
-	box-shadow:  0 0 5px 0 coral;
-	padding: 10px;
-	overflow:hidden;
+.board-content-blank{
+	width: 80px;
 }
-.car-img img{
-	width: 300px;
-	height: 300px;
-	object-fit: contain;
+.content-btn-box{
+	display: flex;
+	justify-content: space-between;
+	gap:10px;
 }
-.car-info-hr{
-	border: 1px dashed #ffb395;
-}
-.btn-reservation{
-	background-color: coral;
-	color:#fff;
-	margin-top:20px;
-	width:300px;
-	padding:20px;
+.content-table{
 	border-radius: 20px;
-	font-size:30px;
-}
-.btn-reservation:hover{
-	background-color: #ffb395;
-}
-.btn-reservation:active{
-	background-color: #ffc9b5;
-}
-
-
-/* rentcarInfo */
-.rent-select{
-	width:820px;
-	display:flex; 
-	justify-content: center;
-	align-items: center;
-	flex-wrap:wrap;
-	border-radius: 30px;
 	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
 }
-.rent-select>table{
-	width:400px;
-}
-
-.rent-select>table img{
-	width:400px;
-	height:300px;
+.content-table img{
+	width: 786px;
 	object-fit:contain;
 }
-.table-blank{
-	height: 100px;
+.content-table th{
+	border-right: 1px dashed coral;
 }
-.rent-select input{
-	width:80%;
+.content-table .blank-th{
+	border-right: 0;
 }
-.rent-select #in,#wifi,#navi,#seat{
-	width:10%;
-}
-.rent-select button{
+.content-btn-box button{
 	background-color: coral;
 	color:#fff;
-	margin:20px 0;
-	width:350px;
+	width:80px;
+	height: 50px;
 	padding:10px;
 	border-radius: 10px;
-	font-size:26px;
+	margin:20px 0;
+	font-size:20px;
 }
-.rent-select button:hover{
+.content-btn-box button:hover{
 	background-color: #ffb395;
 }
-.rent-select button:active{
+.content-btn-box button:active{
 	background-color: #ffc9b5;
 }
+.board-content-box{
+	padding:50px 0;
+	margin-bottom:50px;
+}
+.content-table th{
+	width: 100px;
+	max-width: 100px;
+}
+.content-table td{
+	width: 300px;
+	max-width: 300px;
+}
+.content-table td,th{
+	padding: 10px;
+}
+.content-table .day-range{
+	width:130px;
+}
+.board-content>.content-table .board-title,.board-content{
+	text-align: left;
+	word-wrap:break-word;
+	word-break:keep-all;
+	
+}
+.board-content>.content-table th{
+	text-align: center;
+}
+.content-sep-line{
+	border:0;
+	border-top: 1px dashed #ffb395;
+}
 
-
-
-/* userRentInfo */
-
-.res-info{
-	width:820px;
-	display:flex; 
-	justify-content: center;
-	align-items: center;
-	flex-wrap:wrap;
-	border-radius: 30px;
+/* boardInsert */
+.board-insert-box{
+	margin-bottom: 50px;
+}
+.board-insert-sec{
+	width:800px;
+}
+.board-insert-form{
+	border-radius: 20px;
 	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
 }
-.res-info>table{
-	width:400px;
+.select-box{
+	display: flex;
+	justify-content: space-between;
 }
-
-.res-info>table img{
-	width:400px;
-	height:300px;
+.board-insert-input{
+	margin-bottom:10px;
+}
+.select-box>.category-2{
+	width: 480px;
+	display: flex;
+	justify-content: space-between;
+}
+.select-box select{
+	margin: 0 15px;
+	padding: 3px;
+	position:relative;
+	top: -3px;
+}
+.board-insert-form img{
+	width:750px;
 	object-fit:contain;
 }
-.user-table-blank{
-	height: 80px;
-}
-.res-info input{
-	width:80%;
-}
-.res-info #in,#wifi,#navi,#seat{
-	width:10%;
-}
-.res-info button{
+.board-insert-form button{
 	background-color: coral;
 	color:#fff;
-	margin:20px 0;
-	width:190px;
+	width:80px;
+	height: 50px;
 	padding:10px;
 	border-radius: 10px;
-	font-size:24px;
+	margin:20px 0;
+	font-size:20px;
 }
-.res-info button:hover{
+.board-insert-form button:hover{
 	background-color: #ffb395;
 }
-.res-info button:active{
+.board-insert-form button:active{
 	background-color: #ffc9b5;
+}
+.board-insert-box{
+	padding:50px 0;
+	margin:0 50px 0;
+}
+.content-label {
+	position:relative;
+	top: -380px;
+}
+.board-insert-input input,textarea {
+	width:700px;
+	margin-left: 36px;
+	margin-right: 13px;
+}
+.board-insert-input #insertImg {
+	margin-left: 17px;
+}
+.board-insert-input textarea {
+	height: 400px;
+}
+
+/* boardUpdate */
+.board-update-box{
+	margin-bottom: 50px;
+}
+.board-update-sec{
+	width:800px;
+}
+.board-update-form{
+	border-radius: 20px;
+	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
+}
+.board-update-input{
+	margin-bottom:10px;
+}
+.board-update-form img{
+	width:750px;
+	object-fit:contain;
+}
+.board-update-form button{
+	background-color: coral;
+	color:#fff;
+	width:80px;
+	height: 50px;
+	padding:10px;
+	border-radius: 10px;
+	margin:20px 0;
+	font-size:20px;
+}
+.board-update-form button:hover{
+	background-color: #ffb395;
+}
+.board-update-form button:active{
+	background-color: #ffc9b5;
+}
+.board-update-box{
+	padding:50px 0;
+	margin:0 50px 0;
+}
+.content-label {
+	position:relative;
+	top: -380px;
+}
+.board-update-input input,textarea {
+	width:700px;
+	margin-left: 36px;
+	margin-right: 13px;
+}
+.board-update-input #updateImg {
+	width:670px;
+}
+.board-update-input textarea {
+	height: 400px;
+}
+.update-select-box{
+	display: flex;
+	justify-content: space-between;
+}
+.update-select-box>.category-2.off{
+	display: none; 
+}
+.update-select-box>.category-2{
+	width: 480px;
+	display: flex;
+	justify-content: space-between;
+}
+.update-select-box select{
+	margin: 0 15px;
+	padding: 3px;
+	position:relative;
+	top: -3px;
+}
+
+
+/* boardPaging */
+.board-btn-box{
+	display: flex; 
+	justify-content: space-between;
+}
+.board-list-blank{
+	width:100px;
+}
+.btn-add-board{
+	position:relative;
+	top:60px;
+	background-color: coral;
+	color:#fff;
+	width:100px;
+	height:40px;
+	line-height:20px;
+	padding:10px;
+	border-radius: 20px;
+	font-size:20px;
+}
+.btn-add-board:hover{
+	background-color: ffb395;
+}
+.btn-add-board:active{
+	background-color: ffc9b5;
+}
+.board-list-box{
+	margin-bottom: 50px 0;
+}
+.board-box{
+	width:800px;
+}
+.board-list{
+	border-radius: 20px;
+	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
+}
+.list-table td,th{
+	padding: 10px;
+	max-width: 200px;
+}
+.board-list>.list-table .board-id-width{
+	min-width:130px;
+	max-width:130px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+.board-list>.list-table .board-title-width{
+	min-width:450px;
+	max-width:450px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+.board-list>.list-table th.board-title-width{
+	text-align: center;
+}
+.board-box .hr-td{
+	padding:0;
 }

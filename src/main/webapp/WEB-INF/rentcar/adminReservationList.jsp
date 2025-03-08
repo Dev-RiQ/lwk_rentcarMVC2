@@ -6,10 +6,10 @@
 	<h1>예약현황</h1>
 	<table class="reservation-table">
 		<tr class="th-row">
-			<th>예약번호</th>
+			<th>번호</th>
 			<th>예약자명</th>
 			<th>예약차량</th>
-			<th>예약수량</th>
+			<th>수량</th>
 			<th class="day-range">예약기간</th>
 			<th>예약정보</th>
 			<th>삭제하기</th>
@@ -23,7 +23,7 @@
 						<td>${ rentinfo.userid }</td>
 						<td>${ rentinfo.name }</td>
 						<td>${ rentinfo.qty }</td>
-						<td>${ rentinfo.rday } ~
+						<td class="rentday">${ rentinfo.rday } ~
 							${ rentinfo.eday }<br>
 							(${ rentinfo.dday }일)</td>
 						<td><button onclick="location.href='${ctx}/userRentInfo.do?seq=${ rentinfo.reserve_seq }'">상세보기</button></td>

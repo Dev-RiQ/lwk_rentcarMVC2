@@ -3,13 +3,15 @@
 <%@ include file="../../part/header.jsp" %>
 
 <div class="board-content-box">
-	<div class="content-btn-box">
+	<div class="content-box">
 		<div class="board-content-blank"></div>
-		<c:if test="${ num == log || log == 1 }">
-			<button class="btn-delete-board" onclick="location.href='${ctx}/boardDelete.do?boardNum=${ board.board_num }'">삭제</button>
-			<button class="btn-update-board" onclick="location.href='${ctx}/boardUpdate.do?boardNum=${ board.board_num }'">수정</button>
-		</c:if>
-		<button class="btn-list-board" onclick="history.back()">뒤로</button>
+		<div class="content-btn-box">
+			<c:if test="${ num == log || log == 1 }">
+				<button class="btn-delete-board" onclick="location.href='${ctx}/boardDelete.do?boardNum=${ board.board_num }'">삭제</button>
+				<button class="btn-update-board" onclick="location.href='${ctx}/boardUpdate.do?boardNum=${ board.board_num }'">수정</button>
+			</c:if>
+			<button class="btn-list-board" onclick="history.back()">뒤로</button>
+		</div>
 	</div>
 	<div class="content-box">
 		<div class="board-content">
@@ -20,17 +22,20 @@
 					<th>번호</th>
 					<td>${ board.board_num }</td>
 				</tr>
+				<tr><th class="blank-th"></th></tr>
 				<tr>
 					<th>제목</th>
 					<td class="board-title" colspan="4">${ board.title }</td>
 				</tr>
+				<tr><th class="blank-th"></th></tr>
 				<tr>
 					<th>작성자</th>
 					<td>${ board.userid }</td>
 					<th>작성일</th>
 					<td>${ board.datetime }</td>
 				</tr>
-				<c:if test="${ board.score != 0 }">
+				<tr><th class="blank-th"></th></tr>
+				<c:if test="${ board.category == 2 }">
 					<tr>
 						<th>이용차량</th>
 						<td>${ carName }</td>
@@ -49,15 +54,15 @@
 							(${ board.score })
 						</td>
 					</tr>
+					<tr><th class="blank-th"></th></tr>
 				</c:if>
+				<tr><td colspan="4"><hr class="content-sep-line"></td></tr>
 				<c:if test="${ board.img ne '' && board.img ne null}">
 					<tr>
 						<td colspan="4"><img src="${ctx}/img/${ board.img }" alt="img" /></td>
 					</tr>
+					<tr><td colspan="4"><hr class="content-sep-line"></td></tr>
 				</c:if>
-				<tr>
-					<th colspan="4">내용</th>
-				</tr>
 				<tr>
 					<td class="board-content" colspan="4">${ board.content }</td>
 				</tr>

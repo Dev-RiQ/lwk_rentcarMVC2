@@ -1,7 +1,11 @@
 @charset "UTF-8";
+
 /* adminRentcarContent */
-.car-insert-box{
-	max-width:400px;
+.car-insert-form{
+	width: 650px;
+	border-radius: 20px;
+	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
 }
 .car-insert-input img{
 	width: 600px;
@@ -25,13 +29,15 @@
 	width:30px;
 }
 .car-insert-input input{
-	width: 250px;
+	width: 450px;
 }
 .car-insert-input textarea{
-	width: 250px;
+	width: 450px;
+	height: 400px;
+	margin-right:0px;
 }
 .btn-car-insert{
-	background-color: royalblue;
+	background-color: coral;
 	color:#fff;
 	margin-top:20px;
 	width:400px;
@@ -40,21 +46,29 @@
 	font-size:30px;
 }
 .btn-car-insert:hover{
-	background-color: #6888e8;
+	background-color: #ffb395;
 }
 .btn-car-insert:active{
-	background-color: #9aafef;
+	background-color: #ffc9b5;
 }
 
 /* adminRentcarList */
-.add-car{
-	width:95vw;
+.rentcar-box{
+	border-radius: 20px;
+	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
+}
+.rentcar-list-box{
 	max-width:1200px;
+}
+.add-car{
+	width:80vw;
+	max-width:1000px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 .add-car div{
-	width:200px;
+	width:100px;
 }
 .rentcar-info-table img{
 	width:100px;
@@ -67,7 +81,7 @@
 	max-width:140px;
 }
 .rentcar-info-table button{
-	background-color: royalblue;
+	background-color: coral;
 	color:#fff;
 	width:100px;
 	padding:10px;
@@ -75,25 +89,29 @@
 	font-size:15px;
 }
 .rentcar-info-table button:hover{
-	background-color: #6888e8;
+	background-color: #ffb395;
 }
 .rentcar-info-table button:active{
-	background-color: #9aafef;
+	background-color: #ffc9b5;
 }
 .btn-add-car{
-	background-color: royalblue;
+	background-color: coral;
 	color:#fff;
-	width:200px;
-	padding:20px;
+	width: 100px;
+	height: 40px;
+	line-height:20px;
+	position:relative;
+	top:40px;
+	padding:10px;
 	border-radius: 10px;
 	margin:20px 0;
-	font-size:25px;
+	font-size:20px;
 }
 .btn-add-car:hover{
-	background-color: #6888e8;
+	background-color: #ffb395;
 }
 .btn-add-car:active{
-	background-color: #9aafef;
+	background-color: #ffc9b5;
 }
 .dot-hr{
 	border: 1px dashed #bbb;
@@ -103,12 +121,15 @@
 }
 
 /* adminRentcarUpdate */
-.car-update-box{
-	max-width:400px;
+.car-update-form{
+	width: 650px;
+	border-radius: 20px;
+	box-shadow: 0 0 5px 0 coral;
+	padding: 20px;
 }
 .car-update-input img{
 	width: 600px;
-	
+	object-fit:certain;
 }
 .car-update-sec{
 	display: flex;
@@ -128,13 +149,15 @@
 	width:30px;
 }
 .car-update-input input{
-	width: 250px;
+	width: 450px;
 }
 .car-update-input textarea{
-	width: 250px;
+	width: 450px;
+	height: 400px;
+	margin-right:0px;
 }
 .btn-car-update{
-	background-color: royalblue;
+	background-color: coral;
 	color:#fff;
 	margin-top:20px;
 	width:400px;
@@ -143,8 +166,8 @@
 	font-size:30px;
 }
 .btn-car-update:hover{
-	background-color: #6888e8;
+	background-color: #ffb395;
 }
 .btn-car-update:active{
-	background-color: #9aafef;
+	background-color: #ffc9b5;
 }

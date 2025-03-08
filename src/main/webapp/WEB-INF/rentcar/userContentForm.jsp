@@ -22,12 +22,14 @@
 				<label for="updateEmail">이메일</label>
 				<input name="updateEmail" id="updateEmail" type="text" value="${ user.email }"/>
 			</div>
+			<span id="updateEmailSpan"></span>
 			<div class="update-input">
 				<label for="updatePhone">전화번호</label>
 				<input name="updatePhone" id="updatePhone" type="text" value="${ user.phone }"/>
 			</div>
+			<span id="updatePhoneSpan"></span>
 			<div class="update-submit">
-				<button class="btn-update">정보수정</button>
+				<button class="btn-update" onclick="userUpdateValidCheck()">정보수정</button>
 				<button type="button" class="btn-delete" onclick="location.href='${ctx}/userDelete.do'">회원탈퇴</button>
 			</div>
 		</div>
@@ -35,3 +37,4 @@
 </div>
 
 <%@ include file="../../part/footer.jsp" %>
+<script src="${ctx}/js/userUpdate.js"></script>
