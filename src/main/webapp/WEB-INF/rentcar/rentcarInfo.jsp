@@ -37,7 +37,7 @@
 					</tr>
 					<tr>
 						<th>정보</th>
-						<td>${ detail.info }</td>
+						<td class="car-infotext">${ detail.info }</td>
 					</tr>
 				</table>
 				<table class="detail-table">

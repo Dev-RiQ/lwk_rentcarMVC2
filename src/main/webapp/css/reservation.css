@@ -105,8 +105,9 @@
 }
 .car-img img{
 	width: 300px;
-	height: 300px;
+	height: 200px;
 	object-fit: contain;
+	border-radius: 10px;
 }
 .car-info-hr{
 	border: 1px dashed #ffb395;
@@ -142,6 +143,12 @@
 	width:400px;
 }
 
+.rent-select>table .car-infotext{
+	text-align:left;
+	word-wrap:break-word;
+	word-break:keep-all;
+	max-width:300px;
+}
 .rent-select>table img{
 	width:400px;
 	height:300px;
@@ -188,7 +195,12 @@
 .res-info>table{
 	width:400px;
 }
-
+.res-info>table .car-infotext{
+	text-align:left;
+	word-wrap:break-word;
+	word-break:keep-all;
+	max-width:300px;
+}
 .res-info>table img{
 	width:400px;
 	height:300px;

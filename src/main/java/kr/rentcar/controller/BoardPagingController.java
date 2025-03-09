@@ -14,8 +14,12 @@ public class BoardPagingController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int category = Integer.parseInt(request.getParameter("category"));
-		int curPage = Integer.parseInt(request.getParameter("curpage"));
+		int curPage = 1;
+		if(request.getParameter("curpage") != null)
+			curPage = Integer.parseInt(request.getParameter("curpage"));
+		int category = 0;
+		if(request.getParameter("category") != null)
+			category = Integer.parseInt(request.getParameter("category"));
 		List<Board> list= BoardDAO.getInstance().getPagingBoard(category, curPage);
 		int minPage = BoardDAO.getInstance().getMinPage(curPage);
 		int lastPage = BoardDAO.getInstance().getLastPage(category);

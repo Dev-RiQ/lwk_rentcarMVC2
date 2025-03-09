@@ -185,7 +185,7 @@ main {
 	top:0;
 	left:0;
 	width:100%;
-	height:calc(100vh - 235px);
+	height:100%;
 	background-color: #222;
 	opacity: 0.4;
 	z-index:10;
@@ -224,7 +224,6 @@ main {
 .home button:active{
 	background-color: #ffc9b5;
 }
-
 
 /* footer */
 footer {

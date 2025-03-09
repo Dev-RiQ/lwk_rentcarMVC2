@@ -18,22 +18,54 @@ public class ReservationDAO {
 		if(instance == null) instance = new ReservationDAO();
 		return instance;
 	}
-	public List<RentInfo> getReservationList(int log) {
+	public List<RentInfo> getReservationList(int log,int curPage) {
 		List<RentInfo> list = null;
 		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
 			list = session.selectList("getReservationList", log);
 			calcEndDay(list);
+			int startIdx = (curPage - 1) * 10;
+			int endIdx = startIdx + 10;
+			if(list.size() <= endIdx) endIdx = list.size();
+			list = list.subList(startIdx, endIdx);
 		} catch (Exception e) {
 			System.out.println("getReservationList error");
 			e.printStackTrace();
 		}
 		return list;
 	}
-	public List<RentInfo> getAllReservationList() {
+	private int getCntAllRentByLog(int log) {
+		int cnt = 0;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			cnt = session.selectOne("getCntAllRentByLog", log);
+		}catch (Exception e) {
+			System.out.println("getCntAllRentByLog Fail");
+		}
+		return cnt;
+	}
+	public int getLastPageByLog(int log) {
+		return (getCntAllRentByLog(log) + 9) / 10;
+	}
+	private int getCntAllRent() {
+		int cnt = 0;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			cnt = session.selectOne("getCntAllRent");
+		}catch (Exception e) {
+			System.out.println("getCntAllRent Fail");
+		}
+		return cnt;
+	}
+	public int getLastPage() {
+		return (getCntAllRent() + 9) / 10;
+	}
+	public List<RentInfo> getAllReservationList(int curPage) {
 		List<RentInfo> list = null;
 		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
 			list = session.selectList("getAllReservationList");
 			calcEndDay(list);
+			int startIdx = (curPage - 1) * 10;
+			int endIdx = startIdx + 10;
+			if(list.size() <= endIdx) endIdx = list.size();
+			list = list.subList(startIdx, endIdx);
 		} catch (Exception e) {
 			System.out.println("getAllReservationList error");
 			e.printStackTrace();

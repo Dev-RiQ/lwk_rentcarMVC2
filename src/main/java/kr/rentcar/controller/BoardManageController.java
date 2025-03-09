@@ -14,7 +14,9 @@ public class BoardManageController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int curPage = Integer.parseInt(request.getParameter("curpage"));
+		int curPage = 1;
+		if(request.getParameter("curpage") != null)
+			curPage = Integer.parseInt(request.getParameter("curpage"));
 		List<Board> list = BoardDAO.getInstance().getAllBoard(curPage);
 		int minPage = BoardDAO.getInstance().getMinPage(curPage);
 		int lastPage = BoardDAO.getInstance().getLastPage();

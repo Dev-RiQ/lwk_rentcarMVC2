@@ -70,6 +70,13 @@
 .add-car div{
 	width:100px;
 }
+.rentcar-info-table .car-list-infotext{
+	word-wrap:break-word;
+	word-break:keep-all;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
 .rentcar-info-table img{
 	width:100px;
 	height:60px;

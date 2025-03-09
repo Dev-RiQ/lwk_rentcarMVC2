@@ -15,7 +15,7 @@ public class UserRentListDeleteController implements Controller{
 			throws ServletException, IOException {
 		int log = Integer.parseInt(request.getSession().getAttribute("log").toString());
 		ReservationDAO.getInstance().deleteAllReservation(log);
-		ScriptAlert.getInstance().goUrlWithMsg(response, request, "모든 예약이 취소되었습니다.", "userRentList.do");
+		ScriptAlert.getInstance().goUrlWithMsg(response, request, "모든 예약이 취소되었습니다.", "userRentList.do?curpage=1");
 		return null;
 	}
 

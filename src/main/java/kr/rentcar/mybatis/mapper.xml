@@ -184,6 +184,30 @@
 		FROM board
 		WHERE category=${category}
 	</select>
+	<select id="getCntAllRent" resultType="int">
+		SELECT COUNT(*)
+		FROM reservation
+	</select>
+	<select id="getCntAllCar" resultType="int">
+		SELECT COUNT(*)
+		FROM rentcar
+	</select>
+	<select id="getCntAllCarByCategory" parameterType="int" resultType="int">
+		SELECT COUNT(*)
+		FROM rentcar
+		WHERE category=${category}
+	</select>
+	<select id="getCntAllUser" resultType="int">
+		SELECT COUNT(*)
+		FROM user
+	</select>
+	<select id="getCntAllRentByLog" parameterType="int" resultType="int">
+		SELECT COUNT(*)
+		FROM reservation r
+		INNER JOIN user u
+		ON u.userid=r.userid
+		WHERE u.num=${log}
+	</select>
 	<select id="getCntAllBoard" resultType="int">
 		SELECT COUNT(*)
 		FROM board

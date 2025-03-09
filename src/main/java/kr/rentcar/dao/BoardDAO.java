@@ -52,8 +52,9 @@ public class BoardDAO {
 		return cnt;
 	}
 
+
 	public int getMinPage(int curPage) {
-		return curPage - curPage % 5 + 1;
+		return curPage - (curPage - 1) % 5;
 	}
 
 	public int getLastPage(int category) {

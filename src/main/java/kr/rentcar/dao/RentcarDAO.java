@@ -15,17 +15,58 @@ public class RentcarDAO {
 		if(instance == null) instance = new RentcarDAO();
 		return instance;
 	}
-	public List<Rentcar> getRentcarList(int category) {
+	public List<Rentcar> getRentcarList(int category, int curPage) {
 		List<Rentcar> list = null;
 		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
 			if(category == 0)
 				list = session.selectList("getAllRentcarList");
 			else
 				list = session.selectList("getRentcarList", category);
+			int startIdx = (curPage - 1) * 9;
+			int endIdx = startIdx + 9;
+			if(list.size() <= endIdx) endIdx = list.size();
+			list = list.subList(startIdx, endIdx);
 		} catch (Exception e) {
 			System.out.println("getRentcarList error");
 		}
 		return list;
+	}
+	public List<Rentcar> getRentcarListByCurpage(int curPage) {
+		List<Rentcar> list = null;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			list = session.selectList("getAllRentcarList");
+			int startIdx = (curPage - 1) * 9;
+			int endIdx = startIdx + 9;
+			if(list.size() <= endIdx) endIdx = list.size();
+			list = list.subList(startIdx, endIdx);
+		} catch (Exception e) {
+			System.out.println("getRentcarListByCurpage error");
+		}
+		return list;
+	}
+	private int getCntAllCar(int category) {
+		int cnt = 0;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			cnt = session.selectOne("getCntAllCarByCategory", category);
+		}catch (Exception e) {
+			System.out.println("getCntAllCarByCategory Fail");
+		}
+		return cnt;
+	}
+	public int getLastPageByCategory(int category) {
+		return (getCntAllCar(category) + 8) / 9;
+	}
+	private int getCntAllCar() {
+		int cnt = 0;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			cnt = session.selectOne("getCntAllCar");
+		}catch (Exception e) {
+			System.out.println("getCntAllCar Fail");
+		}
+		return cnt;
+	}
+	public int getLastPage() {
+		return (getCntAllCar() + 8) / 9;
 	}
 	public RentInfoDetail getRentcarInfo(int num) {
 		RentInfoDetail detail = null;

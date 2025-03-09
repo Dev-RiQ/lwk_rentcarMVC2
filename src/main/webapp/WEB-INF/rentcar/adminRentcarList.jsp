@@ -35,7 +35,7 @@
 						<td>${ car.total_qty }</td>
 						<td>${ car.company }</td>
 						<td><img src="${ctx}/img/${ car.img }" alt="car.img" /></td>
-						<td>${ car.info }</td>
+						<td class="car-list-infotext">${ car.info }</td>
 						<td><button onclick="location.href='${ctx}/rentcarUpdate.do?num=${car.num}'">수정하기</button></td>
 						<td><button onclick="location.href='${ctx}/rentcarDelete.do?num=${car.num}'">삭제하기</button></td>
 					</tr>
@@ -43,6 +43,24 @@
 				</c:forEach>
 			</table>
 		</div>
+	</div>
+	<div class="board-page-btn">
+		<c:if test="${ minpage > 5 }">
+			<button class="btn-before" onclick="location.href='${ctx}/rentcarManage.do?curpage=${ minpage - 5 }'"><</button>
+		</c:if>
+		<c:forEach var="i" begin="${ minpage }" end="${ (minpage + 4) > lastpage ? lastpage : (minpage + 4) }">
+			<c:choose>
+				<c:when test="${ i == curpage }">
+					<button class="btn-page on" onclick="location.href='${ctx}/rentcarManage.do?curpage=${ i }'">${ i }</button>
+				</c:when>
+				<c:otherwise>
+					<button class="btn-page" onclick="location.href='${ctx}/rentcarManage.do?curpage=${ i }'">${ i }</button>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${ (minpage + 4) < lastpage }">
+			<button class="btn-after" onclick="location.href='${ctx}/rentcarManage.do?curpage=${ minpage + 5 }'">></button>
+		</c:if>
 	</div>
 </div>
 

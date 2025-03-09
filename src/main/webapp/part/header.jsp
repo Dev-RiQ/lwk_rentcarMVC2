@@ -40,15 +40,15 @@
 	        <a href="${ ctx }/boardPaging.do?category=1&curpage=1">공지사항</a>
 	        <c:choose>
 	      		<c:when test="${ log != 1}">
-			        <a href="${ ctx }/rentcarList.do">예약하기</a>
-			        <a href="${ ctx }/userRentList.do">예약내역</a>
+			        <a href="${ ctx }/rentcarList.do?curpage=1">예약하기</a>
+			        <a href="${ ctx }/userRentList.do?curpage=1">예약내역</a>
 			        <a href="${ ctx }/boardPaging.do?category=2&curpage=1">이용후기</a>
 			        <a href="${ ctx }/boardPaging.do?category=3&curpage=1">문의하기</a>
 	      		</c:when>
 	      		<c:otherwise>
-			        <a href="${ ctx }/rentcarManage.do">차량관리</a>
-			        <a href="${ ctx }/userManage.do">고객관리</a>
-			        <a href="${ ctx }/reservationManage.do">예약관리</a>
+			        <a href="${ ctx }/rentcarManage.do?curpage=1">차량관리</a>
+			        <a href="${ ctx }/userManage.do?curpage=1">고객관리</a>
+			        <a href="${ ctx }/reservationManage.do?curpage=1">예약관리</a>
 			        <a href="${ ctx }/boardManage.do?curpage=1">게시글관리</a>
 	      		</c:otherwise>
 	      	</c:choose>

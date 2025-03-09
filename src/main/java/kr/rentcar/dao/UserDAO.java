@@ -87,14 +87,30 @@ public class UserDAO {
 		return userid;
 	}
 
-	public List<User> getUserList() {
+	public List<User> getUserList(int curPage) {
 		List<User> list= null;
 		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
 			list = session.selectList("getAllUser");
+			int startIdx = (curPage - 1) * 10;
+			int endIdx = startIdx + 10;
+			if(list.size() <= endIdx) endIdx = list.size();
+			list = list.subList(startIdx, endIdx);
 		}catch (Exception e) {
 			System.out.println("getUserList Fail");
 		}
 		return list;
+	}
+	private int getCntAllUser() {
+		int cnt = 0;
+		try (SqlSession session = MybatisConfig.getInstance().openSession()) {
+			cnt = session.selectOne("getCntAllUser");
+		}catch (Exception e) {
+			System.out.println("getCntAllUser Fail");
+		}
+		return cnt;
+	}
+	public int getLastPage() {
+		return (getCntAllUser() + 9) / 10;
 	}
 
 	public boolean hasId(String id) {

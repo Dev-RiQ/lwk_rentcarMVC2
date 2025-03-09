@@ -16,9 +16,9 @@ public class UserRentInfoDeleteController implements Controller{
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		ReservationDAO.getInstance().deleteAReservation(seq);
 		if(request.getSession().getAttribute("log").toString().equals("1"))
-			ScriptAlert.getInstance().goUrlWithMsg(response, request, "예약이 취소되었습니다.", "reservationManage.do");
+			ScriptAlert.getInstance().goUrlWithMsg(response, request, "예약이 취소되었습니다.", "reservationManage.do?curpage=1");
 		else
-			ScriptAlert.getInstance().goUrlWithMsg(response, request, "예약이 취소되었습니다.", "userRentList.do");
+			ScriptAlert.getInstance().goUrlWithMsg(response, request, "예약이 취소되었습니다.", "userRentList.do?curpage=1");
 		return null;
 	}
 

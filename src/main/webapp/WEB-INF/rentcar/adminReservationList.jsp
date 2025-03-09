@@ -37,6 +37,24 @@
 			</c:otherwise>
 		</c:choose>
 	</table>
+	<div class="board-page-btn">
+		<c:if test="${ minpage > 5 }">
+			<button class="btn-before" onclick="location.href='${ctx}/reservationManage.do?curpage=${ minpage - 5 }'"><</button>
+		</c:if>
+		<c:forEach var="i" begin="${ minpage }" end="${ (minpage + 4) > lastpage ? lastpage : (minpage + 4) }">
+			<c:choose>
+				<c:when test="${ i == curpage }">
+					<button class="btn-page on" onclick="location.href='${ctx}/reservationManage.do?curpage=${ i }'">${ i }</button>
+				</c:when>
+				<c:otherwise>
+					<button class="btn-page" onclick="location.href='${ctx}/reservationManage.do?curpage=${ i }'">${ i }</button>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${ (minpage + 4) < lastpage }">
+			<button class="btn-after" onclick="location.href='${ctx}/reservationManage.do?curpage=${ minpage + 5 }'">></button>
+		</c:if>
+	</div>
 </div>
 
 <%@ include file="../../part/footer.jsp" %>
